@@ -1,0 +1,43 @@
+.top-navbar {
+    margin: auto;
+    max-width: 500px;
+    /* border-radius: 3px; */
+
+    background-color: #141617;
+
+    overflow: hidden;
+    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+  }
+
+.top-navbar a.navbar-logo {
+    color: #fff;
+}
+
+.top-navbar a.navbar-logo:hover {
+    color:  #fff;
+}
+
+
+.top-navbar a {
+    float: left;
+
+    padding: 14px 16px;
+
+    color: #7c6f64;
+
+    text-align: center;
+    text-decoration: none;
+}
+
+.top-navbar a:hover {
+    color: #a89984;
+}
+
+.top-navbar a.isActive{
+    color: #a89984;
+}
+
+.top-navbar a:hover:not(.isActive){
+   color: #a89984
+}

@@ -1,0 +1,27 @@
+.bottom-field {
+
+    margin: auto;
+    max-width: 500px;
+    padding: 14px 16px;
+
+    background-color: #141617;
+
+    overflow: hidden;
+    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+
+}
+
+footer .bottom-field {
+    display: flex;
+    align-items:center;
+    flex-direction: row;
+}
+
+.bottom-field a img {
+    margin: 5px;
+    width: 15px;
+    height: 15px;
+    color: #141617;
+    /* float: inline-end; */
+}

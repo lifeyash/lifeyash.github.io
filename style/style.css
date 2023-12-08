@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #141617;
+}
+
+.mid-field{
+
+    margin:auto;
+    max-width: 500px;
+    padding: 14px 16px;
+
+    color: #7c6f64;
+    background-color: #141617;
+    overflow: hidden;
+
+    font-family: 'Playfair Display', serif;
+    text-align: left;
+    text-align: justify;
+    text-justify: inter-word;
+
+}
+
+.mid-field h1{
+    color: #a89984;
+    font-family: 'Playfair Display', serif;
+}
+
+.mid-field p{
+    font-family: 'Playfair Display', serif;
+}
+
