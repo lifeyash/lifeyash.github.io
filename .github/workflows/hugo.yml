@@ -16,6 +16,10 @@ concurrency:
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
 
     steps:
@@ -33,10 +37,11 @@ jobs:
       - name: Build
         run: hugo --minify
 
-      - name: Upload
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
       - name: Deploy
+        id: deployment
         uses: actions/deploy-pages@v4
