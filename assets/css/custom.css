@@ -29,12 +29,14 @@ code {
 /* Wider content area */
 /* Shibui width tuning */
 :root {
-  --container-width: 95ch;
+  --container-width: 100ch;
 }
 
-/* Wider code blocks */
-.highlight,
-pre {
-  max-width: 100%;
-  overflow-x: auto;
+/* Force homepage + content width */
+main,
+.container,
+article,
+body main {
+    width: min(95vw, 100ch) !important;
+    max-width: none !important;
 }
