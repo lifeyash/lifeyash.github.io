@@ -1,0 +1,29 @@
+baseURL = "https://lifeyash.github.io/"
+title = "Yash"
+theme = "shibui"
+
+defaultContentLanguage = "en"
+languageCode = "en-us"
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-us"
+    weight = 1
+
+[params]
+  email = "lifeyash@outlook.com"
+
+  [params.author]
+    name = "Yash Kasar"
+
+[menu]
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 1
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2

@@ -1,0 +1,3 @@
+[submodule "themes/shibui"]
+	path = themes/shibui
+	url = https://github.com/ntk148v/shibui.git
