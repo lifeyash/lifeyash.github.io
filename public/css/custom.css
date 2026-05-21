@@ -1,44 +1,42 @@
-/* You can add custom style here */
-/* Enhanced Table of Contents Styling */
-.toc {
-  position: relative;
+/* Better code block contrast */
+
+.highlight pre,
+pre {
+  background: var(--color-bg-secondary) !important;
+  color: var(--color-text-primary) !important;
+
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow-x: auto;
 }
 
-.toc-title {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-xs);
+/* Inline code */
+code {
+  color: var(--color-text-code);
 }
 
-.toc-title::before {
-  flex-shrink: 0;
+/* Syntax tokens */
+.highlight .nb,
+.highlight .nf,
+.highlight .nv,
+.highlight .s,
+.highlight .c1,
+.highlight .k {
+  color: var(--color-text-primary) !important;
 }
 
-/* Visual indicator for TOC depth levels */
-.toc-content ol ol {
-  opacity: 0.85;
+/* Wider content area */
+/* Shibui width tuning */
+:root {
+  --container-width: 100ch;
 }
 
-.toc-content ol ol ol {
-  opacity: 0.7;
-}
-
-/* Smooth transitions for links in TOC */
-.toc-content a {
-  position: relative;
-}
-
-.toc-content a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--color-text-primary);
-  transition: width 0.2s ease-in-out;
-}
-
-.toc-content a:hover::after {
-  width: 100%;
+/* Force homepage + content width */
+main,
+.container,
+article,
+body main {
+    width: min(95vw, 100ch) !important;
+    max-width: none !important;
 }
