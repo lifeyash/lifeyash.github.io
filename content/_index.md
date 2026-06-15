@@ -1,17 +1,17 @@
 ---
-title: "Yash"
+title: "._."
 ---
 
-# Yash Kasar
+> The year's at the spring,  
+> And day's at the morn;  
+> Morning's at seven;  
+> The hillside's dew-pearled;  
+> The lark's on the wing;  
+> The snail's on the thorn;  
+> God's in His heaven  
+> All's right with the world.  
 
-Embedded systems, ARM, RISC-V, bare-metal programming, Linux, and learning computers from the lowest levels upward.
 
-I'll write about:
-
-- STM32 and ARM experiments
-- RISC-V notes
-- Linux and kernel exploration
-- FreeRTOS and embedded systems
-- Things I break and eventually understand
+Notes left behind for another day.
 
 [Browse Posts →](/posts/)

@@ -1,5 +1,5 @@
 baseURL = "https://lifeyash.github.io/"
-title = "Yash"
+title = "._."
 theme = "shibui"
 
 defaultContentLanguage = "en"
@@ -19,11 +19,11 @@ languageCode = "en-us"
 
 [menu]
   [[menu.main]]
-    name = "Posts"
+    name = "posts"
     url = "/posts/"
     weight = 1
 
   [[menu.main]]
-    name = "About"
+    name = "about"
     url = "/about/"
     weight = 2
