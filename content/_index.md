@@ -20,9 +20,6 @@ Lately this has mostly meant working closer to the machine — ARM Cortex-M inte
 * ~~10-06-2026 — Revisiting SWD, OpenOCD, semihosting, and debugging workflows.~~
 * ~~08-06-2026 — Experimenting with breakpoints and understanding execution flow while debugging.~~
 
-
-[/posts/](/posts/)
-
 # *contact*
 [/github](https://github.com/lifeyash)
 [/email](mailto:lifeyash@outlook.com)
