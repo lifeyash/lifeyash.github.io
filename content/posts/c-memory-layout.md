@@ -1,6 +1,6 @@
 +++
 date = '2026-07-03T18:30:00+05:30'
-draft = true
+draft = false
 title = 'C Memory Layout'
 +++
 
