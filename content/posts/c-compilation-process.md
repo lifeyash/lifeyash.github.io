@@ -1,5 +1,5 @@
 +++
-date = '2026-07-09T17:14:16+05:30'
+date = '2026-06-26T18:30:00+05:30'
 draft = false
 title = 'The C Compilation Process'
 +++
@@ -296,3 +296,5 @@ gcc main.o -o main
 ```
 
 At this point, the build process is complete. The executable now contains all the necessary code and data required to run the program.
+
+_**Author's Note:** Technical content by the author. Edited and reworded with AI assistance._

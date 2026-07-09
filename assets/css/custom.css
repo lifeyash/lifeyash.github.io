@@ -37,7 +37,7 @@ main,
 .container,
 article,
 body main {
-  width: min(95vw, 100ch) !important;
+  width: min(65vw, 100ch) !important;
   max-width: none !important;
 }
 
