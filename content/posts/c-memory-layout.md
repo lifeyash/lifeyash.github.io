@@ -25,7 +25,7 @@ In a typical embedded system, these sections are mapped into two primary types o
 - **RAM** – Stores data that can be **modified during program execution**, including initialized variables, uninitialized variables, the **heap**, and the **stack**.
 
 A simplified view of a typical embedded system looks like this:
-{{< ascii >}}
+```txt
             Flash (Non-Volatile Memory)       
 0x0000                                        
 ┌────────────────────────────────────────────┐
@@ -52,7 +52,7 @@ A simplified view of a typical embedded system looks like this:
 │ Stack                  lower addresses  |  │
 └────────────────────────────────────────────┘
 0x2FFF                                        
-{{< /ascii >}}
+```
 
 Throughout this article, we'll explore what each of these sections contains, why it exists, and how the compiler, linker, and startup code work together to prepare them before your program reaches `main()`.
 
@@ -326,7 +326,7 @@ A stack frame typically contains:
 
 A simplified stack frame looks like this:
 
-{{< ascii >}}
+```txt
 Higher Memory Address                       
                                             
             Previous Stack Frames           
@@ -358,13 +358,13 @@ Higher Memory Address
 └──────────────────────────────────────────┘
                                             
 Lower Memory Address                        
-{{< /ascii >}}
+```
 
 ### Stack Growth
 
 On most processor architectures, including ARM Cortex-M, the stack grows **toward lower memory addresses**.
 
-{{< ascii >}}
+```txt
            Higher RAM Address (0x2FFF)  
                                         
 ┌──────────────────────────────────────┐
@@ -386,7 +386,7 @@ On most processor architectures, including ARM Cortex-M, the stack grows **towar
 │                .data                 │
 └──────────────────────────────────────┘
            Lower RAM Address (0x2000)   
-{{< /ascii >}}
+```
 Every function call decreases the stack pointer, reserving space for a new stack frame. When the function returns, the stack pointer is restored, automatically releasing the memory occupied by that frame.
 
 ### Stack Overflow

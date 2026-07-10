@@ -60,29 +60,3 @@ article pre,
 article code {
   text-align: left;
 }
-
-/* Fixed size for ASCII art display*/
-/* ASCII diagrams */
-.highlight pre,
-pre {
-    white-space: pre !important;
-    overflow-x: auto;
-    overflow-wrap: normal !important;
-    word-break: normal !important;
-
-    font-size: 11px !important;
-    line-height: 1.15 !important;
-
-    font-family: "JetBrains Mono", "Cascadia Mono", "Consolas", monospace;
-    font-variant-ligatures: none;
-}
-
-pre.ascii {
-    white-space: pre;
-    overflow-x: auto;
-
-    font-size: 11px;
-    line-height: 1.1;
-
-    font-family: "JetBrains Mono", monospace;
-}
