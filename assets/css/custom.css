@@ -1,5 +1,14 @@
 /* Better code block contrast */
 
+/* 1. Define your local font at the top of custom.css */
+@font-face {
+    font-family: 'LocalFiraCode';
+    /* Fix: Use absolute web path from root directory */
+    src: url('/fonts/FiraCode-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 .highlight pre,
 pre {
   background: var(--color-bg-secondary) !important;
@@ -74,12 +83,12 @@ pre {
     overflow-wrap: normal !important;
     word-break: normal !important;
 
-    /* Bumped up to bypass Android's 12px accessibility minimums */
     font-size: 13px !important; 
     line-height: 1.2 !important;
 
-    /* Strict font rendering and kerning overrides */
-    font-family: "Fira Code", "Roboto Mono", monospace !important;
+    /* USE YOUR LOCAL FONT HERE */
+    font-family: 'LocalFiraCode', monospace !important;
+    
     font-variant-ligatures: none !important;
     font-kerning: none !important;
     letter-spacing: 0 !important;
