@@ -64,6 +64,6 @@ article code {
 /* Fixed size for ASCII art display*/
 .highlight code.language-text,
 pre code.language-text {
-    font-size: 12px;
+    font-size: 8px;
     line-height: 1.2;
 }

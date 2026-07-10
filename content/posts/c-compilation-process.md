@@ -10,7 +10,7 @@ Before a C program becomes an executable binary, it passes through a series of s
 
 ```text
           C FILES COMPILATION PROCESS         
-----------------------------------------------
+          
 ┌───────x                                          
 │     .c│                                          
 │ ┌───────x                        STAGE I         
