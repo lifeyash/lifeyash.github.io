@@ -76,3 +76,13 @@ pre {
     font-family: "JetBrains Mono", "Cascadia Mono", "Consolas", monospace;
     font-variant-ligatures: none;
 }
+
+pre.ascii {
+    white-space: pre;
+    overflow-x: auto;
+
+    font-size: 11px;
+    line-height: 1.1;
+
+    font-family: "JetBrains Mono", monospace;
+}

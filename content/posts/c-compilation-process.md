@@ -8,7 +8,7 @@ title = 'The C Compilation Process'
 
 Before a C program becomes an executable binary, it passes through a series of stages collectively known as the **compilation process**. Each stage transforms the source code into a different form, ultimately producing a program that the operating system or microcontroller can execute.
 
-```txt
+{{< ascii >}}
           C FILES COMPILATION PROCESS              
                                                    
 ┌───────x                                          
@@ -51,7 +51,7 @@ Before a C program becomes an executable binary, it passes through a series of s
                      │       │ linker              
                      │       │ script              
                      └───────┘                     
-```
+{{< /ascii >}}
 
 
 The compilation process consists of four major stages:
