@@ -25,7 +25,7 @@ In a typical embedded system, these sections are mapped into two primary types o
 - **RAM** – Stores data that can be **modified during program execution**, including initialized variables, uninitialized variables, the **heap**, and the **stack**.
 
 A simplified view of a typical embedded system looks like this:
-```text
+```txt
             Flash (Non-Volatile Memory)       
 0x0000                                        
 ┌────────────────────────────────────────────┐
@@ -326,7 +326,7 @@ A stack frame typically contains:
 
 A simplified stack frame looks like this:
 
-```text
+```txt
 Higher Memory Address                       
                                             
             Previous Stack Frames           
@@ -364,7 +364,7 @@ Lower Memory Address
 
 On most processor architectures, including ARM Cortex-M, the stack grows **toward lower memory addresses**.
 
-```text
+```txt
            Higher RAM Address (0x2FFF)  
                                         
 ┌──────────────────────────────────────┐
