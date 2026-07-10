@@ -26,8 +26,8 @@ In a typical embedded system, these sections are mapped into two primary types o
 
 A simplified view of a typical embedded system looks like this:
 ```text
-            Flash (Non-Volatile Memory)
-0x0000                              
+            Flash (Non-Volatile Memory)       
+0x0000                                        
 ┌────────────────────────────────────────────┐
 │ .text      (Program Instructions)          │
 ├────────────────────────────────────────────┤
@@ -35,9 +35,9 @@ A simplified view of a typical embedded system looks like this:
 ├────────────────────────────────────────────┤
 │ Initial values for .data                   │
 └────────────────────────────────────────────┘
-0x3FFF
-            RAM (Volatile Memory)
-0x2000              
+0x3FFF                                        
+            RAM (Volatile Memory)             
+0x2000                                        
 ┌────────────────────────────────────────────┐
 │ .data   (Initialized Variables)            │
 ├────────────────────────────────────────────┤
@@ -51,7 +51,7 @@ A simplified view of a typical embedded system looks like this:
 │                        grows toward     |  │
 │ Stack                  lower addresses  |  │
 └────────────────────────────────────────────┘
-0x2FFF
+0x2FFF                                        
 ```
 
 Throughout this article, we'll explore what each of these sections contains, why it exists, and how the compiler, linker, and startup code work together to prepare them before your program reaches `main()`.
@@ -327,14 +327,14 @@ A stack frame typically contains:
 A simplified stack frame looks like this:
 
 ```text
-Higher Memory Address
-
-            Previous Stack Frames
+Higher Memory Address                       
+                                            
+            Previous Stack Frames           
 ┌──────────────────────────────────────────┐
 │                                          │
 └──────────────────────────────────────────┘
-
-            Current Stack Frame
+                                            
+            Current Stack Frame             
 ┌──────────────────────────────────────────┐
 │ Local Variables                          │
 ├──────────────────────────────────────────┤
@@ -344,9 +344,9 @@ Higher Memory Address
 ├──────────────────────────────────────────┤
 │ Return Address                           │
 └──────────────────────────────────────────┘
-                     │
-                     ▼  New function call
-            New Stack Frame
+                     │                      
+                     ▼  New function call   
+            New Stack Frame                 
 ┌──────────────────────────────────────────┐
 │ Local Variables                          │
 ├──────────────────────────────────────────┤
@@ -356,8 +356,8 @@ Higher Memory Address
 ├──────────────────────────────────────────┤
 │ Return Address                           │
 └──────────────────────────────────────────┘
-
-Lower Memory Address
+                                            
+Lower Memory Address                        
 ```
 
 ### Stack Growth
@@ -365,19 +365,19 @@ Lower Memory Address
 On most processor architectures, including ARM Cortex-M, the stack grows **toward lower memory addresses**.
 
 ```text
-           Higher RAM Address (0x2FFF)
-
+           Higher RAM Address (0x2FFF)  
+                                        
 ┌──────────────────────────────────────┐
 │                Stack                 │
 └──────────────────────────────────────┘
-                  │
-                  │ grows toward
-                  ▼ lower addresses
-
-            Available RAM
-
-                  ▲ grows toward
-                  │ higher addresses
+                  │                     
+                  │ grows toward        
+                  ▼ lower addresses     
+                                        
+            Available RAM               
+                                        
+                  ▲ grows toward        
+                  │ higher addresses    
 ┌──────────────────────────────────────┐
 │                 Heap                 │
 └──────────────────────────────────────┘
@@ -385,7 +385,7 @@ On most processor architectures, including ARM Cortex-M, the stack grows **towar
 └──────────────────────────────────────┘
 │                .data                 │
 └──────────────────────────────────────┘
-           Lower RAM Address (0x2000)
+           Lower RAM Address (0x2000)   
 ```
 Every function call decreases the stack pointer, reserving space for a new stack frame. When the function returns, the stack pointer is restored, automatically releasing the memory occupied by that frame.
 
