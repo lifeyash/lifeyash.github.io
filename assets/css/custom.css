@@ -60,3 +60,10 @@ article pre,
 article code {
   text-align: left;
 }
+
+/* Fixed size for ASCII art display*/
+.highlight code.language-text,
+pre code.language-text {
+    font-size: 12px;
+    line-height: 1.2;
+}

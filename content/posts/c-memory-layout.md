@@ -25,7 +25,7 @@ In a typical embedded system, these sections are mapped into two primary types o
 - **RAM** – Stores data that can be **modified during program execution**, including initialized variables, uninitialized variables, the **heap**, and the **stack**.
 
 A simplified view of a typical embedded system looks like this:
-```
+```text
             Flash (Non-Volatile Memory)
 0x0000                              
 ┌────────────────────────────────────────────┐

@@ -8,7 +8,7 @@ title = 'The C Compilation Process'
 
 Before a C program becomes an executable binary, it passes through a series of stages collectively known as the **compilation process**. Each stage transforms the source code into a different form, ultimately producing a program that the operating system or microcontroller can execute.
 
-```bash
+```text
           C FILES COMPILATION PROCESS         
 ----------------------------------------------
 ┌───────x                                          
