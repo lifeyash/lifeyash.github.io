@@ -8,6 +8,52 @@ title = 'The C Compilation Process'
 
 Before a C program becomes an executable binary, it passes through a series of stages collectively known as the **compilation process**. Each stage transforms the source code into a different form, ultimately producing a program that the operating system or microcontroller can execute.
 
+```bash
+          C FILES COMPILATION PROCESS         
+----------------------------------------------
+┌───────x                                          
+│     .c│                                          
+│ ┌───────x                        STAGE I         
+│ │     .c│      ┌────────┐   ┌────────────┐     
+│ │  ┌───────x ─►│COMPILER├──►│PREPROCESSOR├─┐   
+└─│  │     .h│   └────────┘   └────────────┘ │   
+  │  │       │                    #define    │   
+  └──│       │                    #include   │   
+     │       │                               │   
+     └───────┘                               |
+                                             │   
+        ┌───────x                  ┌───────x │   
+        │  .asm │     STAGE II     │    .i │ │   
+        │       │  ┌───────────┐   │       │ │   
+ ┌───── ┤       ├──┤COMPILATION│◄──┤       │─┘   
+ │      │       │  └───────────┘   │       │     
+ │      └───────┘                  └───────┘     
+ │                                             
+ │                                                 
+ │       STAGE III      ┌───────x                  
+ │     ┌───────────┐    │    .o │                
+ └───► │ ASSEMBLER ├────│  ┌───────x    
+       └───────────┘    │  │    .o │            
+                        │  │       │            
+                        └──│       │─────────┐  
+                           │       │         │   
+                           └───────┘         │   
+     ┌───────x                               │   
+     │   .elf│             STAGE IV          │   
+     │       │            ┌──────────┐       │   
+     │       │ ◄───────── │  LINKER  │◄──────┘   
+     │       │            └──────────┘           
+     └───────┘                   ▲               
+     executable                  │                 
+     linkable        ┌───────x   │                 
+     format          │    .ld│   │                 
+                     │       │ ──┘                 
+                     │       │ linker              
+                     │       │ script              
+                     └───────┘      
+```
+
+
 The compilation process consists of four major stages:
 
 1. **Preprocessing**
