@@ -62,8 +62,17 @@ article code {
 }
 
 /* Fixed size for ASCII art display*/
-.highlight code.language-text,
-pre code.language-text {
-    font-size: 10px;
-    line-height: 1.2;
+/* ASCII diagrams */
+.highlight pre,
+pre {
+    white-space: pre !important;
+    overflow-x: auto;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+
+    font-size: 11px !important;
+    line-height: 1.15 !important;
+
+    font-family: "JetBrains Mono", "Cascadia Mono", "Consolas", monospace;
+    font-variant-ligatures: none;
 }
