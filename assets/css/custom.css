@@ -61,18 +61,26 @@ article code {
   text-align: left;
 }
 
-/* Fixed size for ASCII art display*/
+/* Fixed size for ASCII art display */
 /* ASCII diagrams */
 .highlight pre,
 pre {
+    /* 1. Stop Android Brave/Chrome from randomly inflating the text size */
+    -webkit-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+
+    /* 2. Force exact spacing and prevent silent wrapping */
     white-space: pre !important;
-    overflow-x: auto;
+    overflow-x: auto !important;
     overflow-wrap: normal !important;
     word-break: normal !important;
 
     font-size: 11px !important;
     line-height: 1.15 !important;
 
-    font-family: monospace;
-    font-variant-ligatures: none;
+    /* 3. Force a strict monospace fallback for Android, prevent character merging/squishing */
+    font-family: "Roboto Mono", "Courier New", Consolas, monospace !important;
+    font-variant-ligatures: none !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
 }
