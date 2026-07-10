@@ -61,13 +61,18 @@ article code {
   text-align: left;
 }
 
-/* Mobile code blocks */
-@media (max-width: 600px) {
-  .highlight pre,
-  pre {
-    max-width: 100%;
-    padding: 0.75rem;
+/* Fixed size for ASCII art display*/
+/* ASCII diagrams */
+.highlight pre,
+pre {
+    white-space: pre !important;
     overflow-x: auto;
-    white-space: pre;
-  }
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+
+    font-size: 11px !important;
+    line-height: 1.15 !important;
+
+    font-family: monospace;
+    font-variant-ligatures: none;
 }
