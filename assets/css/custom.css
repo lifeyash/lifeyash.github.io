@@ -32,14 +32,14 @@ code {
   --container-width: 100ch;
 }
 
-/* Force homepage + content width */
+/* Force homepage + content width
 main,
 .container,
 article,
 body main {
-  width: min(65vw, 100ch) !important;
+  width: min(95vw, 100ch) !important;
   max-width: none !important;
-}
+} */
 
 /* Justify paragraphs */
 article p,

@@ -7,54 +7,56 @@ title = 'C Memory Layout'
 
 # C Program Memory Layout
 
-Every C program occupies memory while it is running. However, not all data in a program has the same purpose or lifetime.
+Every C program occupies memory while it is running. However, not all data in a program has the same purpose or lifetime. Some data must remain unchanged throughout execution, while other data is created, modified, or destroyed as the program runs.
 
 For example:
 
-* Machine instructions must remain unchanged throughout the program's execution.
-* Global variables need to exist for the entire lifetime of the program.
-* Local variables are created when a function is called and destroyed when it returns.
-* Dynamically allocated memory exists only until it is explicitly released.
+- **Machine instructions** must remain unchanged throughout the program's execution.
+- **Global and static variables** need to exist for the entire lifetime of the program.
+- **Local variables** are created when a function is called and automatically destroyed when it returns.
+- **Dynamically allocated memory** exists only until it is explicitly released.
 
-Since each type of data has different requirements, the compiler and linker organize the program into **separate memory sections** instead of placing everything into one large block of memory.
+Since each type of data has different requirements, the **compiler** and **linker** organize a program into **separate memory sections** instead of placing everything into one large block of memory.
 
 In a typical embedded system, these sections are mapped into two primary types of memory:
 
-* **Flash (ROM)** – Stores the program code and other read-only data. Its contents persist even after power is removed.
-* **RAM** – Stores data that can be modified while the program is running, such as variables, the stack, and the heap.
+- **Flash (ROM)** – Stores the program instructions and other **read-only data**. Its contents are **non-volatile**, meaning they are retained even after power is removed.
+
+- **RAM** – Stores data that can be **modified during program execution**, including initialized variables, uninitialized variables, the **heap**, and the **stack**.
 
 A simplified view of a typical embedded system looks like this:
 ```
-                     Flash (Non-Volatile Memory)
-                              
-0x0000 ┌───────────────────────────────────────────────┐
-       │ .text      (Program Instructions)             │
-       ├───────────────────────────────────────────────┤
-       │ .rodata    (Read-Only Data)                   │
-       ├───────────────────────────────────────────────┤
-       │ Initial values for .data                      │
-0x3FFF └───────────────────────────────────────────────┘
-
-                      RAM (Volatile Memory)                             
-0x2000 ┌───────────────────────────────────────────────┐
-       │ .data      (Initialized Variables)            │
-       ├───────────────────────────────────────────────┤
-       │ .bss       (Zero-Initialized Variables)       │
-       ├───────────────────────────────────────────────┤
-       │                           grows towards    │  │
-       │ Heap                      higher addresses │  │
-       │                                            ▼  │
-       │--------------- Free Memory -------------------│
-       │                                            ▲  │
-       │                           grows toward     |  │
-       │ Stack                     lower addresses  |  │
-0x2FFF └───────────────────────────────────────────────┘
+            Flash (Non-Volatile Memory)
+0x0000                              
+┌────────────────────────────────────────────┐
+│ .text      (Program Instructions)          │
+├────────────────────────────────────────────┤
+│ .rodata    (Read-Only Data)                │
+├────────────────────────────────────────────┤
+│ Initial values for .data                   │
+└────────────────────────────────────────────┘
+0x3FFF
+            RAM (Volatile Memory)
+0x2000              
+┌────────────────────────────────────────────┐
+│ .data   (Initialized Variables)            │
+├────────────────────────────────────────────┤
+│ .bss    (Zero-Initialized Variables)       │
+├────────────────────────────────────────────┤
+│                        grows towards    │  │
+│ Heap                   higher addresses │  │
+│                                         ▼  │
+│------------ Free Memory -------------------│
+│                                         ▲  │
+│                        grows toward     |  │
+│ Stack                  lower addresses  |  │
+└────────────────────────────────────────────┘
+0x2FFF
 ```
-
-> **Note**: The addresses shown above are illustrative only. The actual memory addresses depend on the target microcontroller and its linker script.
 
 Throughout this article, we'll explore what each of these sections contains, why it exists, and how the compiler, linker, and startup code work together to prepare them before your program reaches `main()`.
 
+---
 
 ## 1. `.text` Section — Program Instructions
 
@@ -116,6 +118,7 @@ In this example:
 * `max_users` is typically stored in the **`.rodata`** section.
 * The string literal `"Access Denied!"` is also typically stored in **`.rodata`**.
 * The pointer variable `msg` is **not** stored in `.rodata`. Since it is a local variable, it resides on the **stack**.
+
 ---
 
 ## 3. `.data` Section — Initialized Data
